@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Si t'arrives pas, chiao poto</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #FFEEF0;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            color: #FF69B4;
+        }
+
+        #input-container, #birthday-section, #secret-panel {
+            margin-top: 20px;
+        }
+
+        input {
+            padding: 10px;
+            border: 2px solid #FF69B4;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 15px;
+            font-size: 20px;
+            background-color: #FF69B4;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #FF1493;
+        }
+
+        #secret-panel {
+            margin-top: 30px;
+            background-color: #FFF0F5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        #non-btn {
+            background-color: red;
+            color: white;
+            font-size: 25px;
+            transition: all 0.5s ease;
+        }
+
+        /* Effet de zoom inversé sur le bouton "non" */
+        #non-btn:hover {
+            transform: scale(0.5);
+            position: relative;
+        }
+
+        #non-btn:hover::after {
+            content: "Qu'est ce que tu cherches ici dans ce cas ?";
+            position: absolute;
+            font-size: 14px;
+            color: black;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .letter-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+            border: 2px dashed #FF69B4;
+            padding: 20px;
+            background-color: #FFF8FB;
+        }
+
+        .icons {
+            font-size: 40px;
+            margin: 10px;
+        }
+
+        .final-gif {
+            margin-top: 20px;
+        }
+
+        .top-gif, .bottom-gif {
+            width: 300px;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Un gif de singe en haut -->
+        <img src="c:\Users\azeyn\Downloads\beanie-baby.gif" alt="Singe" class="top-gif">
+        
+        <h1>T'arrives pas je te tue. 🐒</h1>
+        <p>Déjà que tu me mets en silencieux. :)) !</p>
+
+        <!-- Section pour choisir "OUIIII" ou "non" -->
+        <div id="choice-section">
+            <h2>Est-ce que je compte pour toi ?</h2>
+            <button onclick="proceedToBirthday()">OUIIII</button>
+            <button id="non-btn">non</button>
+        </div>
+
+        <!-- Section pour deviner la date et l'heure (initialement cachée) -->
+        <div id="birthday-section" style="display: none;">
+            <p>Maintenant, mets ma date d'anniv. Ouais le miens poto.</p>
+            <div id="input-container">
+                <input type="text" id="birthday-input" placeholder="Jour/Mois/Année">
+                <input type="text" id="time-input" placeholder="Heure (HH:MM)">
+                <button onclick="checkBirthdayAndTime()">Valider</button>
+            </div>
+        </div>
+
+        <!-- Panel secret caché au début -->
+        <div id="secret-panel">
+            <h2>Félicitations 🎉 !</h2>
+            <div class="letter-container">
+                <span class="icons">🌸🐒💌💖🐒🌸</span>
+                <p class="message">Tu es trop important pour moi et je te remercie d'être là pour moi 💕. Je veux que tu saches que je tiens énormément à toi, et je suis tellement reconnaissant(e) de partager ces moments avec toi.</p>
+                <span class="icons">💖🌸🐒💌🌸🐒</span>
+            </div>
+            <!-- Ajout du gif final -->
+            <img src="c:\Users\azeyn\Downloads\bisou-singe-petit_gif (303×295).gif" alt="Final Gif" class="final-gif">
+        </div>
+
+        <!-- Un autre gif en bas -->
+        <img src="c:\Users\azeyn\Downloads\giphy.webp" alt="Singe danseur" class="bottom-gif">
+    </div>
+
+    <script>
+        function proceedToBirthday() {
+            document.getElementById("choice-section").style.display = "none";
+            document.getElementById("birthday-section").style.display = "block";
+        }
+
+        function checkBirthdayAndTime() {
+            const birthdayInput = document.getElementById("birthday-input").value;
+            const timeInput = document.getElementById("time-input").value;
+            const correctDate = "14/05/2005";
+            const correctTime = "00:30";
+
+            if (birthdayInput === correctDate && timeInput === correctTime) {
+                // Redirige vers une nouvelle page
+                window.location.href = "Untitled-1.html"; // Assurez-vous que cette page existe
+            } else {
+                alert("MMMMDRR TSAIS QUE JE VAIS T'ECLATER. :)))))");
+            }
+        }
+    </script>
+</body>
+</html>
